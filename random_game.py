@@ -1,7 +1,10 @@
 import random
 
 
-def initializeGame(random_number, random_lives):
+def initializeGame(random_number, lifes):
+    print(f"""
+        {len(lifes)} opportunities assigned.
+    """)
     while True:
 
         player_number = 0
@@ -15,23 +18,37 @@ def initializeGame(random_number, random_lives):
             print(f"🎉 You won. ")
             break
         else:
-            random_lives -= 1
-            if(random_lives) <= 0:
-                print("💀💀GAME OVER💀💀")
+            lifes.pop()
+            if(len(lifes)) <= 0:
+                print(f"""
+                💀💀GAME OVER💀💀
+                The answer was {random_number}""")
                 break
 
             if player_number < random_number:
-                print("💔 Wrong! Give me a higher number")
+                print(f"""
+                {lifes} 
+                {len(lifes)} opportunities remaining
+                ⬆ Give me a higher number
+                
+                """)
             else:
-                print("💔 Wrong! Give me a lower number")
+                print(f"""
+                {lifes}
+                {len(lifes)} opportunities remaining
+                ⬇ Give me a lower number
+                
+                """)
 
 
 def run():
     random_number = random.randint(1, 100)
-    random_lives = random.randint(1, 5)
+    random_lifes = random.randint(1, 10)
+    lifes = ['💙']
+    lifes = lifes * random_lifes
 
-    print(random_number)
-    initializeGame(random_number, random_lives)
+    # print(random_number)
+    initializeGame(random_number, lifes)
 
 
 if __name__ == '__main__':
