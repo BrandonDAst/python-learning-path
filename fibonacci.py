@@ -7,7 +7,7 @@ def printFibonacci(postition):
     list.append(num1)
     list.append(num2)
 
-    for i in range(postition):
+    for i in range(postition-1):
         num3 = num1 + num2
         list.append(num3)
 
