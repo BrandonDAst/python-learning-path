@@ -1,0 +1,6 @@
+nombre = input("¿Cual es el nombre?")
+print('-' + nombre+'-')
+print('-' + nombre.upper()+'-')
+print('-' + nombre.capitalize()+'-')
+print('-' + nombre.strip()+'-')
+print('-' + nombre.lower()+'-')
